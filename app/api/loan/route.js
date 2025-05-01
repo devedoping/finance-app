@@ -31,14 +31,14 @@ export const POST = auth(async function POST(req) {
                 amount,
                 totalTerm: parseInt(totalTerm),
                 startDate: new Date(startDate),
-                installment: {
+                installments: {
                     createMany: {
                         data: installments,
                     }
                 }
             },
             include: {
-                installment: true,
+                installments: true,
             }
         });
 
