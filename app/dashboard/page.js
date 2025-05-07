@@ -11,9 +11,9 @@ const Page = () => {
                 <CalendarContainer />
             </div>
             <div className="w-1/4">
+                <LoansOverview />
                 <MonthlySummery />
                 <MonthlyIncome />
-                <LoansOverview />
             </div>
         </div>
     );

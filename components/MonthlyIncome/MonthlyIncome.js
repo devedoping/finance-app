@@ -17,7 +17,7 @@ const MonthlyIncome = async () => {
     const totalIncome = incomes.reduce((totalIncome, income) => totalIncome + parseInt(income.amount), 0);
 
     return (
-        <Card title="درآمدها">
+        <Card title="درآمدها" secure={true}>
             {incomes.map(income => (
                 <IncomeRow key={`income-row-${income.id}`} income={income} />
             ))}

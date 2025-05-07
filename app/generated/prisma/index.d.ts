@@ -174,7 +174,7 @@ export class PrismaClient<
     * Example usage:
     * ```ts
     * // Fetch zero or more Installments
-    * const installment = await prisma.installment.findMany()
+    * const installments = await prisma.installment.findMany()
     * ```
     */
   get installment(): Prisma.InstallmentDelegate<ExtArgs, ClientOptions>;
@@ -2264,7 +2264,7 @@ export namespace Prisma {
   }
 
   /**
-   * Loan.installment
+   * Loan.installments
    */
   export type Loan$installmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
@@ -2611,10 +2611,10 @@ export namespace Prisma {
      * @param {InstallmentFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Installments
-     * const installment = await prisma.installment.findMany()
+     * const installments = await prisma.installment.findMany()
      * 
      * // Get first 10 Installments
-     * const installment = await prisma.installment.findMany({ take: 10 })
+     * const installments = await prisma.installment.findMany({ take: 10 })
      * 
      * // Only select the `id`
      * const installmentWithIdOnly = await prisma.installment.findMany({ select: { id: true } })
