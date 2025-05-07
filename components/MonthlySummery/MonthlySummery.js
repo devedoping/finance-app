@@ -6,7 +6,7 @@ import {useIncomeStore} from "@/store/incomeStore";
 import {useLoanStore} from "@/store/loanStore";
 
 const MonthlySummery = () => {
-    const { totalIncome } = useIncomeStore();
+    const { totalIncome, secure } = useIncomeStore();
     const { totalDebt } = useLoanStore();
     const monthlyBalance = totalIncome - totalDebt;
 
@@ -14,7 +14,9 @@ const MonthlySummery = () => {
         <Card title="خلاصه ماه">
             <Row>
                 <div className="text-slate-400">مجموع درآمد</div>
-                <div className="text-black font-medium">{totalIncome.toLocaleString()} تومان</div>
+                <div
+                    className={`text-black font-medium ${secure ? 'blur-sm' : ''}`}>{totalIncome.toLocaleString()} تومان
+                </div>
             </Row>
             <Row>
                 <div className="text-slate-400">مجموع بدهی‌ها</div>
@@ -23,7 +25,7 @@ const MonthlySummery = () => {
             <hr className="border-black mb-6"/>
             <Row>
                 <div className="text-black font-medium">مجموع</div>
-                <div className={`${monthlyBalance >= 0 ? `text-green-600` : `text-red-600`} font-medium`}><span dir="ltr">{(monthlyBalance).toLocaleString()}</span> تومان</div>
+                <div className={`${monthlyBalance >= 0 ? `text-green-600` : `text-red-600`} ${secure ? 'blur-sm' : ''} font-medium`}><span dir="ltr">{(monthlyBalance).toLocaleString()}</span> تومان</div>
             </Row>
         </Card>
     );
