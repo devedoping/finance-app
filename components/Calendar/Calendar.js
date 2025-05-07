@@ -76,7 +76,9 @@ const Calendar = ({year, month}) => {
                 <div key={`weekday-${index}`}>{day}</div>
             ))}
             {days.map((day, index) => (
-                <Day key={`day-${index}`} day={day} hasDueDate={checkHasDueDate(day)} />
+                <Day key={`day-${index}`} day={day} hasDueDate={checkHasDueDate(day)}
+                     today={jalaali.toJalaali(new Date()).jy === day.jy && jalaali.toJalaali(new Date()).jm === day.jm && jalaali.toJalaali(new Date()).jd === day.jd}
+                />
             ))}
         </div>
     );
